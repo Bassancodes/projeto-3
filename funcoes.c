@@ -42,24 +42,27 @@ void listarContatos() {
 
 
 
-void deletarContato() { // Definição da função para deletar um contato da agenda.
-    char telefone[15]; // Declara uma variável para armazenar o telefone do contato a ser deletado.
-    printf("Digite o telefone do contato que deseja deletar: "); // Solicita ao usuário que digite o telefone do contato a ser deletado.
-    scanf("%s", telefone); // Lê o telefone do contato fornecido pelo usuário e armazena na variável.
+void deletarContato() {
+    char telefone[TAMANHO_TELEFONE];
+    printf("Digite o telefone do contato que deseja deletar: ");
+    scanf("%s", telefone);
 
-    for (int i = 0; i < num_contatos; i++) { // Loop para iterar sobre todos os contatos na agenda.
-        if (strcmp(agenda[i].telefone, telefone) == 0) { // Verifica se o telefone do contato atual é igual ao telefone fornecido pelo usuário.
-            for (int j = i; j < num_contatos - 1; j++) { // Loop para deslocar os contatos uma posição para trás, excluindo o contato a ser deletado.
-                agenda[j] = agenda[j + 1]; // Desloca o contato uma posição para trás na agenda.
+    for (int i = 0; i < num_contatos; i++) {
+        if (strcmp(agenda[i].telefone, telefone) == 0) {
+            for (int j = i; j < num_contatos - 1; j++) {
+                agenda[j] = agenda[j + 1];
             }
-            num_contatos--; // Decrementa o número de contatos na agenda.
-            printf("Contato deletado com sucesso!\n"); // Exibe uma mensagem informando que o contato foi deletado com sucesso.
-            return; // Retorna da função após encontrar e deletar o contato.
+            num_contatos--;
+            printf("Contato deletado com sucesso!\n");
+            return;
         }
     }
 
-    printf("Contato não encontrado!\n"); // Exibe uma mensagem informando que o contato não foi encontrado na agenda.
+    printf("Contato não encontrado!\n");
 }
+
+
+
 
 void salvarAgenda() { // Definição da função para salvar a agenda em um arquivo binário.
     FILE *arquivo = fopen("agenda.bin", "wb"); // Abre um arquivo binário para escrita.
