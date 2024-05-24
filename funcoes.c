@@ -75,21 +75,6 @@ void salvarAgenda() {
     printf("Agenda salva com sucesso!\n");
 }
 
-
-
-void salvarAgenda() { // Definição da função para salvar a agenda em um arquivo binário.
-    FILE *arquivo = fopen("agenda.bin", "wb"); // Abre um arquivo binário para escrita.
-    if (arquivo == NULL) { // Verifica se houve erro ao abrir o arquivo.
-        printf("Erro ao abrir arquivo!\n"); // Exibe uma mensagem de erro informando que houve um erro ao abrir o arquivo.
-        return; // Retorna da função em caso de erro.
-    }
-
-    fwrite(&num_contatos, sizeof(int), 1, arquivo); // Escreve o número de contatos na agenda no arquivo.
-    fwrite(agenda, sizeof(Contato), num_contatos, arquivo); // Escreve os contatos da agenda no arquivo.
-
-    fclose(arquivo); // Fecha o arquivo após terminar de escrever os dados.
-    printf("Agenda salva com sucesso!\n"); // Exibe uma mensagem informando que a agenda foi salva com sucesso.
-} 
 void carregarAgenda() {
     FILE *arquivo = fopen("agenda.bin", "rb");
     if (arquivo == NULL) {
