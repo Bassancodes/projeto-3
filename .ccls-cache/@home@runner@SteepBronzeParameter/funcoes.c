@@ -33,6 +33,14 @@ void listarContatos() { // Definição da função para listar todos os contatos
         printf("%d: %s %s - %s, %s\n", i + 1, agenda[i].nome, agenda[i].sobrenome, agenda[i].email, agenda[i].telefone); // Exibe as informações do contato na tela.
     }
 }
+void listarContatos() {
+    printf("Lista de contatos:\n");
+    for (int i = 0; i < num_contatos; i++) {
+        printf("%d: %s %s - %s, %s\n", i + 1, agenda[i].nome, agenda[i].sobrenome, agenda[i].email, agenda[i].telefone);
+    }
+}
+
+
 
 void deletarContato() { // Definição da função para deletar um contato da agenda.
     char telefone[15]; // Declara uma variável para armazenar o telefone do contato a ser deletado.
