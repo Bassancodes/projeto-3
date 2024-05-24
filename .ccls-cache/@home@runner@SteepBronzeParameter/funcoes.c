@@ -75,18 +75,18 @@ void salvarAgenda() { // Função para salvar a agenda em um arquivo binário.
     printf("Agenda salva com sucesso!\n"); // Informa ao usuário que a agenda foi salva com sucesso.
 }
 
-void carregarAgenda() {
-    FILE *arquivo = fopen("agenda.bin", "rb");
-    if (arquivo == NULL) {
-        printf("Arquivo de agenda não encontrado!\n");
-        return;
+void carregarAgenda() { // Função para carregar a agenda a partir de um arquivo binário.
+    FILE *arquivo = fopen("agenda.bin", "rb"); // Abre o arquivo "agenda.bin" em modo de leitura binária.
+    if (arquivo == NULL) { // Verifica se o arquivo foi aberto corretamente.
+        printf("Arquivo de agenda não encontrado!\n"); // Informa ao usuário que o arquivo de agenda não foi encontrado.
+        return; // Sai da função, pois não é possível carregar a agenda sem o arquivo.
     }
 
-    fread(&num_contatos, sizeof(int), 1, arquivo);
-    fread(agenda, sizeof(Contato), num_contatos, arquivo);
+    fread(&num_contatos, sizeof(int), 1, arquivo); // Lê o número de contatos do arquivo e armazena na variável 'num_contatos'.
+    fread(agenda, sizeof(Contato), num_contatos, arquivo); // Lê os contatos do arquivo e armazena no array 'agenda'.
 
-    fclose(arquivo);
-    printf("Agenda carregada com sucesso!\n");
+    fclose(arquivo); // Fecha o arquivo após terminar de ler os dados.
+    printf("Agenda carregada com sucesso!\n"); // Informa ao usuário que a agenda foi carregada com sucesso.
 }
 
 
