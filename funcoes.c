@@ -3,28 +3,28 @@
 #include <string.h> 
 #include "funcoes.h" 
 
-Contato agenda[MAX_CONTATOS]; // Declara um array de contatos com tamanho máximo MAX_CONTATOS.
+
 int num_contatos = 0; // Inicializa o número de contatos como zero.
 
-void adicionarContato() { // Definição da função para adicionar um novo contato à agenda.
-    if (num_contatos >= MAX_CONTATOS) { // Verifica se a agenda está cheia.
-        printf("A agenda está cheia!\n"); // Exibe uma mensagem informando que a agenda está cheia.
-        return; // Retorna da função sem adicionar o contato.
+void adicionarContato() {
+    if (num_contatos >= MAX_CONTATOS) {
+        printf("A agenda está cheia!\n");
+        return;
     }
 
-    Contato novoContato; // Declara uma variável para armazenar o novo contato.
+    Contato novoContato;
 
-    printf("Digite o nome: "); // Solicita ao usuário que digite o nome do contato.
-    scanf("%s", novoContato.nome); // Lê o nome do contato fornecido pelo usuário e armazena na estrutura do novo contato.
-    printf("Digite o sobrenome: "); // Solicita ao usuário que digite o sobrenome do contato.
-    scanf("%s", novoContato.sobrenome); // Lê o sobrenome do contato fornecido pelo usuário e armazena na estrutura do novo contato.
-    printf("Digite o email: "); // Solicita ao usuário que digite o email do contato.
-    scanf("%s", novoContato.email); // Lê o email do contato fornecido pelo usuário e armazena na estrutura do novo contato.
-    printf("Digite o telefone: "); // Solicita ao usuário que digite o telefone do contato.
-    scanf("%s", novoContato.telefone); // Lê o telefone do contato fornecido pelo usuário e armazena na estrutura do novo contato.
+    printf("Digite o nome: ");
+    scanf("%s", novoContato.nome);
+    printf("Digite o sobrenome: ");
+    scanf("%s", novoContato.sobrenome);
+    printf("Digite o email: ");
+    scanf("%s", novoContato.email);
+    printf("Digite o telefone: ");
+    scanf("%s", novoContato.telefone);
 
-    agenda[num_contatos++] = novoContato; // Adiciona o novo contato à agenda e incrementa o número de contatos.
-    printf("Contato adicionado com sucesso!\n"); // Exibe uma mensagem informando que o contato foi adicionado com sucesso.
+    agenda[num_contatos++] = novoContato;
+    printf("Contato adicionado com sucesso!\n");
 }
 
 void listarContatos() { // Definição da função para listar todos os contatos na agenda.
