@@ -27,12 +27,6 @@ void adicionarContato() {
     printf("Contato adicionado com sucesso!\n");
 }
 
-void listarContatos() { // Definição da função para listar todos os contatos na agenda.
-    printf("Lista de contatos:\n"); // Exibe uma mensagem indicando que a lista de contatos será exibida.
-    for (int i = 0; i < num_contatos; i++) { // Loop para iterar sobre todos os contatos na agenda.
-        printf("%d: %s %s - %s, %s\n", i + 1, agenda[i].nome, agenda[i].sobrenome, agenda[i].email, agenda[i].telefone); // Exibe as informações do contato na tela.
-    }
-}
 void listarContatos() {
     printf("Lista de contatos:\n");
     for (int i = 0; i < num_contatos; i++) {
