@@ -22,8 +22,6 @@ extern int num_contatos; // Declara uma variável externa para armazenar o núme
 void adicionarContato(); // Protótipo da função para adicionar um novo contato.
 void listarContatos(); // Protótipo da função para listar todos os contatos.
 void deletarContato(); // Protótipo da função para deletar um contato existente.
-void salvarAgenda(); // Protótipo da função para salvar a lista de contatos em um arquivo.
 void carregarAgenda(); // Protótipo da função para carregar a lista de contatos de um arquivo.
-void listarcontatos();
 void salvarAgenda();
 #endif
