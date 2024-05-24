@@ -30,6 +30,14 @@ void adicionarContato() { // Função para adicionar um novo contato.
     printf("Contato adicionado com sucesso!\n"); // Informa ao usuário que o contato foi adicionado com sucesso.
 }
 
+void listarContatos() { // Função para listar todos os contatos na agenda.
+    printf("Lista de contatos:\n"); // Exibe um cabeçalho para a lista de contatos.
+    for (int i = 0; i < num_contatos; i++) { // Itera sobre todos os contatos na agenda.
+        printf("%d: %s %s - %s, %s\n", i + 1, agenda[i].nome, agenda[i].sobrenome, agenda[i].email, agenda[i].telefone); 
+        // Exibe o índice (iniciado em 1) e as informações de cada contato.
+    }
+}
+
 
 
 void deletarContato() {
