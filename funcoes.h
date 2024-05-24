@@ -23,5 +23,5 @@ void adicionarContato(); // Protótipo da função para adicionar um novo contat
 void listarContatos(); // Protótipo da função para listar todos os contatos.
 void deletarContato(); // Protótipo da função para deletar um contato existente.
 void carregarAgenda(); // Protótipo da função para carregar a lista de contatos de um arquivo.
-void salvarAgenda();
+void salvarAgenda(); // Protótipo da função para salvar a agenda de contatos de um arquivo.
 #endif
