@@ -61,18 +61,18 @@ void deletarContato() { // Função para deletar um contato da agenda.
 }
 
 
-void salvarAgenda() {
-    FILE *arquivo = fopen("agenda.bin", "wb");
-    if (arquivo == NULL) {
-        printf("Erro ao abrir arquivo!\n");
-        return;
+void salvarAgenda() { // Função para salvar a agenda em um arquivo binário.
+    FILE *arquivo = fopen("agenda.bin", "wb"); // Abre o arquivo "agenda.bin" em modo de escrita binária.
+    if (arquivo == NULL) { // Verifica se o arquivo foi aberto corretamente.
+        printf("Erro ao abrir arquivo!\n"); // Informa ao usuário que houve um erro ao abrir o arquivo.
+        return; // Sai da função, pois o arquivo não pôde ser aberto.
     }
 
-    fwrite(&num_contatos, sizeof(int), 1, arquivo);
-    fwrite(agenda, sizeof(Contato), num_contatos, arquivo);
+    fwrite(&num_contatos, sizeof(int), 1, arquivo); // Escreve o número de contatos na agenda no arquivo.
+    fwrite(agenda, sizeof(Contato), num_contatos, arquivo); // Escreve todos os contatos na agenda no arquivo.
 
-    fclose(arquivo);
-    printf("Agenda salva com sucesso!\n");
+    fclose(arquivo); // Fecha o arquivo após terminar de escrever os dados.
+    printf("Agenda salva com sucesso!\n"); // Informa ao usuário que a agenda foi salva com sucesso.
 }
 
 void carregarAgenda() {
