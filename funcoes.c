@@ -105,16 +105,4 @@ void carregarAgenda() {
 }
 
 
-void carregarAgenda() { // Definição da função para carregar a agenda de um arquivo binário.
-    FILE *arquivo = fopen("agenda.bin", "rb"); // Abre um arquivo binário para leitura.
-    if (arquivo == NULL) { // Verifica se houve erro ao abrir o arquivo.
-        printf("Arquivo de agenda não encontrado!\n"); // Exibe uma mensagem informando que o arquivo de agenda não foi encontrado.
-        return; // Retorna da função em caso de erro.
-    }
 
-    fread(&num_contatos, sizeof(int), 1, arquivo); // Lê o número de contatos do arquivo.
-    fread(agenda, sizeof(Contato), num_contatos, arquivo); // Lê os contatos do arquivo.
-
-    fclose(arquivo); // Fecha o arquivo após terminar de ler os dados.
-    printf("Agenda carregada com sucesso!\n"); // Exibe uma mensagem informando que a agenda foi carregada com sucesso.
-}
