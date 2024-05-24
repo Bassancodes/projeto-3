@@ -61,6 +61,19 @@ void deletarContato() {
     printf("Contato não encontrado!\n");
 }
 
+void salvarAgenda() {
+    FILE *arquivo = fopen("agenda.bin", "wb");
+    if (arquivo == NULL) {
+        printf("Erro ao abrir arquivo!\n");
+        return;
+    }
+
+    fwrite(&num_contatos, sizeof(int), 1, arquivo);
+    fwrite(agenda, sizeof(Contato), num_contatos, arquivo);
+
+    fclose(arquivo);
+    printf("Agenda salva com sucesso!\n");
+}
 
 
 
