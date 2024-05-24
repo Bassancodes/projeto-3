@@ -89,7 +89,21 @@ void salvarAgenda() { // Definição da função para salvar a agenda em um arqu
 
     fclose(arquivo); // Fecha o arquivo após terminar de escrever os dados.
     printf("Agenda salva com sucesso!\n"); // Exibe uma mensagem informando que a agenda foi salva com sucesso.
+} 
+void carregarAgenda() {
+    FILE *arquivo = fopen("agenda.bin", "rb");
+    if (arquivo == NULL) {
+        printf("Arquivo de agenda não encontrado!\n");
+        return;
+    }
+
+    fread(&num_contatos, sizeof(int), 1, arquivo);
+    fread(agenda, sizeof(Contato), num_contatos, arquivo);
+
+    fclose(arquivo);
+    printf("Agenda carregada com sucesso!\n");
 }
+
 
 void carregarAgenda() { // Definição da função para carregar a agenda de um arquivo binário.
     FILE *arquivo = fopen("agenda.bin", "rb"); // Abre um arquivo binário para leitura.
