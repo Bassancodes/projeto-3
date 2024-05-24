@@ -40,24 +40,26 @@ void listarContatos() { // Função para listar todos os contatos na agenda.
 
 
 
-void deletarContato() {
-    char telefone[TAMANHO_TELEFONE];
-    printf("Digite o telefone do contato que deseja deletar: ");
-    scanf("%s", telefone);
+void deletarContato() { // Função para deletar um contato da agenda.
+    char telefone[TAMANHO_TELEFONE]; // Declara uma variável para armazenar o telefone do contato a ser deletado.
 
-    for (int i = 0; i < num_contatos; i++) {
-        if (strcmp(agenda[i].telefone, telefone) == 0) {
-            for (int j = i; j < num_contatos - 1; j++) {
-                agenda[j] = agenda[j + 1];
+    printf("Digite o telefone do contato que deseja deletar: "); // Solicita ao usuário que digite o telefone do contato a ser deletado.
+    scanf("%s", telefone); // Lê o telefone digitado pelo usuário e armazena na variável 'telefone'.
+
+    for (int i = 0; i < num_contatos; i++) { // Itera sobre todos os contatos na agenda.
+        if (strcmp(agenda[i].telefone, telefone) == 0) { // Verifica se o telefone do contato atual é igual ao telefone fornecido pelo usuário.
+            for (int j = i; j < num_contatos - 1; j++) { // Move todos os contatos subsequentes uma posição para trás, sobrescrevendo o contato a ser deletado.
+                agenda[j] = agenda[j + 1]; // Substitui o contato atual pelo próximo contato na agenda.
             }
-            num_contatos--;
-            printf("Contato deletado com sucesso!\n");
-            return;
+            num_contatos--; // Decrementa o contador de contatos, pois um contato foi deletado.
+            printf("Contato deletado com sucesso!\n"); // Informa ao usuário que o contato foi deletado com sucesso.
+            return; // Sai da função após deletar o contato.
         }
     }
 
-    printf("Contato não encontrado!\n");
+    printf("Contato não encontrado!\n"); // Informa ao usuário que o contato não foi encontrado na agenda.
 }
+
 
 void salvarAgenda() {
     FILE *arquivo = fopen("agenda.bin", "wb");
